@@ -273,7 +273,7 @@ NS_INLINE TYIndexSection TYMakeIndexSection(NSInteger index, NSInteger section) 
     }
     
     if (isNearly) {
-        [self scrollToItemAtIndexSection:TYMakeIndexSection(index, 0) animate:animate];
+        [self scrollToItemAtIndexSection:TYMakeIndexSection(index, _indexSection.section) animate:animate];
         return;
     }
     
