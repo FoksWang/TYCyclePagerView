@@ -265,12 +265,18 @@ NS_INLINE TYIndexSection TYMakeIndexSection(NSInteger index, NSInteger section) 
     [self scrollToItemAtIndexSection:indexSection animate:animate];
 }
 
-- (void)scrollToItemAtIndex:(NSInteger)index animate:(BOOL)animate {
+- (void)scrollToItemAtIndex:(NSInteger)index animate:(BOOL)animate isNearly:(BOOL)isNearly {
     if (!_didLayout && _didReloadData) {
         _firstScrollIndex = index;
     }else {
         _firstScrollIndex = -1;
     }
+    
+    if (isNearly) {
+        [self scrollToItemAtIndexSection:TYMakeIndexSection(index, 0) animate:animate];
+        return;
+    }
+    
     if (!_isInfiniteLoop) {
         [self scrollToItemAtIndexSection:TYMakeIndexSection(index, 0) animate:animate];
         return;

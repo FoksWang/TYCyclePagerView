@@ -153,7 +153,7 @@ typedef NS_ENUM(NSUInteger, TYPagerScrollDirection) {
 /**
  scroll to item at index
  */
-- (void)scrollToItemAtIndex:(NSInteger)index animate:(BOOL)animate;
+- (void)scrollToItemAtIndex:(NSInteger)index animate:(BOOL)animate isNearly:(BOOL)isNearly;
 - (void)scrollToItemAtIndexSection:(TYIndexSection)indexSection animate:(BOOL)animate;
 /**
  scroll to next or pre item
